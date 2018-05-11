@@ -4,23 +4,20 @@ import TableProducto from './table-producto/table-producto';
 
 let data = [
     {
-        Id:1,
+        Id: 1,
         Nombre: 'Aquiles',
         Edad: 27,
-        Titulo: 'Ing Sistemas',
-        OtroDato:'Es macho'
+        Titulo: 'Ing Sistemas'
     }, {
-        Id:2,
+        Id: 2,
         Nombre: 'Juan',
         Edad: 29,
-        Titulo: 'Ing Sistemas',
-        OtroDato:'Es pato'
+        Titulo: 'Ing Sistemas'
     }, {
-        Id:3,
+        Id: 3,
         Nombre: 'Oscar',
         Edad: 32,
-        Titulo: 'Ing Sistemas',
-        OtroDato:'Es pato'
+        Titulo: 'Ing Sistemas'
     }
 ];
 const App = (props) => <TableProducto data={data}/>
