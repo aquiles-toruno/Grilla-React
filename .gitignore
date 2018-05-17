@@ -3,3 +3,6 @@
 
 #bundle.js
 /public/bundle.js
+
+#plugin
+/lib

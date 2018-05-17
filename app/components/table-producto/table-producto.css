@@ -1,0 +1,11 @@
+table.table{
+    width: 100%;
+}
+
+table.table.border,table.table.border th,table.table.border td{
+border: 1px solid #4CAF50;
+}
+
+table.table thead th{
+    text-align: left;
+}

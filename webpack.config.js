@@ -11,10 +11,7 @@ module.exports = {
         modules: [
             __dirname, 'node_modules'
         ],
-        alias: {
-            //components
-            wrapper: 'app/components/common/wrapper.jsx'
-        },
+        alias: {},
         extensions: ['.js', '.jsx']
     },
     module: {
@@ -26,6 +23,9 @@ module.exports = {
                 },
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/
+            }, {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             }
         ]
     }

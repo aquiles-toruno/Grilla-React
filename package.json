@@ -1,10 +1,11 @@
 {
-  "name": "grilla",
-  "version": "1.0.0",
+  "name": "gridview",
+  "version": "1.0.3",
   "description": "Plugin para armar grilla al estilo ASP WebForm",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "babel ./app/components/table/paginacion/paginacion.jsx --presets babel-preset-env,babel-preset-stage-0,babel-preset-react --out-file ./lib/paginacion/paginacion.js"
   },
   "author": "Aquiles Toruño González",
   "license": "ISC",
@@ -18,6 +19,8 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
-    "webpack": "^2.3.0"
+    "webpack": "^2.3.0",
+    "css-loader": "^0.28.0",
+    "style-loader": "^0.17.0"
   }
 }

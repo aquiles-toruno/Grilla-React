@@ -13,41 +13,24 @@ const propTypes = {
 }
 
 class TableRow extends React.Component {
-    prepararChildren(columnas) {
+    prepararChildren() {
         return React
             .Children
-            .map(columnas, columna => {
+            .map(this.props.columnas, columna => {
                 switch (columna.type.name) {
                     case 'BindColumn':
                         return React.cloneElement(columna, {
                             dato: this.props.registro[columna.props.dataField]
                         });
                     case 'TemplateColumn':
-                        return React
-                            .Children
-                            .map(columna, templateColumna => {
-                                return React.cloneElement(templateColumna, templateColumna.props, React.Children.map(templateColumna.props.children, itemTemplate => {
-                                    if (itemTemplate.type.name === 'Enlace') {
-                                        let {paramsField} = itemTemplate.props;
-                                        var parametros = [];
-                                        if (paramsField) {
-                                            parametros = paramsField.map(parametro => {
-                                                return {parametro, valor: this.props.registro[parametro]}
-                                            });
-                                        }
-                                        return React.cloneElement(itemTemplate, {params: parametros})
-                                    } else 
-                                        return itemTemplate;
-                                    }
-                                ));
-                            });
+                        return columna;
                 }
             });
     }
     render() {
         let {type, columnas} = this.props;
         let fila = type == 'data'
-            ? this.prepararChildren(columnas)
+            ? this.prepararChildren()
             : columnas.map((columna, indice) => {
                 return <th key={indice}>{columna.props.headerText}</th>
             })
